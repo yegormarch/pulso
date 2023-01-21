@@ -1,13 +1,13 @@
 .carousel
   width: 1920px
-  min-height: 5325px
+  min-height: 580px
   background-color: #ffffff
   padding: 81px 0
   position: relative
   &__inner
     width: 750px
     margin: 0 auto
-  .slick-prev
+  .prev, .next
     position: absolute
     top: 50%
     transform: translateY(-50%)
@@ -17,14 +17,11 @@
     img
       width: 31px
       height: 50px
-  .slick-next
-    border: none
-    background: white
-    position: absolute
-    transform: translateY(50%)
+  .next
     right: -66px
-    bottom: 50%
-
+    left: auto
     img
       width: 31px
       height: 50px
+  .tns-item
+    text-align: center
