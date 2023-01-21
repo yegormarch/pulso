@@ -1,6 +1,8 @@
 .catalog
   min-height: 1083px
+  width: 1920px
   padding-top: 81px
+
   &__title
     font-weight: 400
     font-size: 30px
@@ -8,11 +10,13 @@
     text-transform: uppercase
     text-align: center
   &__tabs
+    width: 643px
     display: flex
-    margin-top: 42px
+    margin: 42px auto 0 auto
+    justify-content: space-between
   &__tab
     list-style: none
-    width: 222px
+    width: 200px
     height: 52px
     border: 2px solid #D0D0D0
     font-style: normal
@@ -20,7 +24,9 @@
     font-size: 18px
     line-height: 18px
     text-transform: uppercase
-    text-align: center
+    justify-content: center
+    display: flex
+    align-items: center
   &__items
     margin-top: 57px
     display: flex
@@ -48,11 +54,36 @@
     font-size: 14px
     line-height: 22px
     text-align: center
-    &__link
-      font-weight: 500
-      font-size: 14px
-      line-height: 14px
-      text-align: center
+  &__link
+    font-weight: 500
+    font-size: 14px
+    line-height: 14px
+    text-align: center
+    a
       text-decoration-line: underline
       color: $main-color
       text-transform: uppercase
+  &__divider
+    display: block
+    width: 263px
+    height: 3px
+    margin: 17px auto 0 auto
+    background: #E8E8E8
+    border-radius: 5px
+  &__buy
+    margin-top: 27px
+    display: flex
+    justify-content: space-between
+    text-align: left
+  &__price
+    font-weight: 700
+    font-size: 20px
+    line-height: 20px
+    span
+      font-weight: 300
+      font-size: 14px
+      line-height: 14px
+      text-decoration-line: line-through
+
+
+
