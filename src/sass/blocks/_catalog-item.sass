@@ -1,11 +1,11 @@
 .catalog-item
-    width: 298px
+    width: 293px
     min-height: 442px
     border: 2px solid #E8E8E8
     padding: 20px 26px
     margin-bottom: 15px
+    margin-right: 15px
     overflow: hidden
-
     img
       display: block
       margin: 0 auto
@@ -19,7 +19,7 @@
       width: 50%
       transition: 0.5s all
       margin-right: 0
-      transform: translateX(-100%)
+      transform: translateX(-110%)
       &_active
         transform: translateX(0)
         margin-right: 20px
@@ -29,6 +29,7 @@
       transition: 0.5s all
       padding-left: 16px
       padding-right: 20px
+      position: relative
       ul
         list-style-type: none
         padding-left: 0
@@ -52,6 +53,17 @@
       &_active
         transform: translateX(-100%)
         margin-left: 0
+    &__link-back
+      display: block
+      position: absolute
+      bottom: -3px
+      left: 50%
+      transform: translateX(calc( -50% - 19px ))
+      text-decoration-line: underline
+      color: $main-color
+      text-transform: uppercase
+      &:hover
+        color: $main-color
 
     &__name
       font-style: normal
@@ -67,17 +79,17 @@
       line-height: 22px
       text-align: center
     &__link
+      display: block
       font-weight: 500
       font-size: 14px
       line-height: 14px
       text-align: center
       margin-top: 10px
-      a
-        text-decoration-line: underline
+      text-decoration-line: underline
+      color: $main-color
+      text-transform: uppercase
+      &:hover
         color: $main-color
-        text-transform: uppercase
-        &:hover
-          color: $main-color
     hr
       width: 243px
       margin: 17px auto 0 auto
@@ -101,15 +113,5 @@
       font-weight: 700
       font-size: 20px
       line-height: 20px
-    &__link-back
-      position: absolute
-      bottom: 0
-      left: 50%
-      transform: translateX(calc( -50% - 19px ))
-      a
-        text-decoration-line: underline
-        color: $main-color
-        text-transform: uppercase
-        &:hover
-          color: $main-color
+    
 
