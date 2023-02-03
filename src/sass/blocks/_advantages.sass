@@ -1,6 +1,5 @@
 .advantages
   min-height: 470px
-  width: 1920px
   background-color: #f6f6f6
   padding: 70px 0 78px 0
   &__title
@@ -28,3 +27,17 @@
         text-decoration: underline
         color: #ff0000
         display: inline
+  &__animation
+    animation: heartbeat 1.5s linear infinite
+    &:hover
+      animation-play-state: paused
+
+  @media( max-width: 576px )
+    .advantages
+      &__wrapper
+        margin-top: 15px
+        flex-direction: column
+        align-items: center
+  
+    
+

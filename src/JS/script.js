@@ -52,7 +52,6 @@ $(document).ready(function(){
 });
 
 
-
 // Defines a function "toggleSlide" that takes in an item, and when that item is clicked, it toggles the active class on the associated elements.
   function toggleSlide(item) {
     $(item).each(function(i) {
@@ -68,9 +67,92 @@ toggleSlide('.catalog-item__link');
 toggleSlide('.catalog-item__link-back');
 
 
+// Modal
+$('[data-modal=consultation]').on('click', function() {
+  $('.overlay, #consultation').fadeIn();
 });
 
 
+$('.modal__close').on('click', function() {
+  $('.overlay, #consultation, #order, #thanks').fadeOut();
+});
+
+$('[data-modal=order]').each(function(i) {
+  $(this).on('click', function() {
+    $('#order .modal__description').text($('.catalog-item__name').eq(i).text());
+    $('.overlay, #order').fadeIn();
+});
+});
+
+
+    function validateForms(form){
+      $(form).validate({
+          rules: {
+              name: {
+                  required: true,
+                  minlength: 2
+              },
+              phone: "required",
+              email: {
+                  required: true,
+                  email: true
+              }
+          },
+          messages: {
+              name: {
+                  required: "Пожалуйста, введите свое имя",
+                  minlength: jQuery.validator.format("Введите {0} символа!")
+                },
+              phone: "Пожалуйста, введите свой номер телефона",
+              email: {
+                required: "Пожалуйста, введите свою почту",
+                email: "Неправильно введен адрес почты"
+              }
+          }
+        });
+    };
+
+    validateForms('#consultation-form');
+    validateForms('#consultation form');
+    validateForms('#order form');
+
+    $('input[name=phone]').mask("+7 (999) 999-99-99");
 
 
 
+
+    $('form').submit(function(e) {
+      e.preventDefault();
+      $.ajax({
+          type: "POST",
+          url: "mailer/smart.php",
+          data: $(this).serialize()
+      }).done(function() {
+          $(this).find("input").val("");
+          $('#consultation, #order').fadeOut();
+          $('.overlay, #thanks').fadeIn();
+
+          $('form').trigger('reset');
+      });
+      return false;
+  });
+
+
+  // Smooth scroll and pageup
+  $(window).scroll(function(){
+    if ($(this).scrollTop() > 1500) {
+      $('.pageup').fadeIn();
+    } else {
+      $('.pageup').fadeOut();
+    }
+  });
+
+  $("a[href^='#']").click(function() {
+    const _href = $(this).attr("href");
+    $("html, body").animate({scrollTop: $(_href).offset().top+"px"});
+    return false;
+  });
+
+  new WOW().init();
+
+})
