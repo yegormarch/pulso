@@ -35,8 +35,8 @@ $(document).ready(function(){
       {
         breakpoint: 992,
         settings: {
-          arrows: false,
-          dots: true
+          arrows: true,
+          dots: false
         }
       }
     ]
@@ -119,8 +119,6 @@ $('[data-modal=order]').each(function(i) {
     $('input[name=phone]').mask("+7 (999) 999-99-99");
 
 
-
-
     $('form').submit(function(e) {
       e.preventDefault();
       $.ajax({
@@ -136,7 +134,6 @@ $('[data-modal=order]').each(function(i) {
       });
       return false;
   });
-
 
   // Smooth scroll and pageup
   $(window).scroll(function(){

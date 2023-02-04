@@ -14,7 +14,8 @@
   background: #F2F2F2
   position: absolute
   top: 50%
-  transform: translateY(50%)
+  left: 50%
+  transform: translate(-50%, 50%)
   &__close
     position: absolute
     color: $main-color
@@ -44,7 +45,18 @@
     margin-bottom: 15px
 
   
-
-
 #consultation, #order, #thanks
   display: none
+
+@media(max-width: 575px)
+  .modal
+    padding-top: 35px 
+    width: 215px
+    min-height: 365px
+    &__close
+      position: absolute
+      color: $main-color
+      font-size: 40px
+      right: -26px
+      top: -55px
+

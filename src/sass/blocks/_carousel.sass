@@ -4,8 +4,10 @@
   padding: 81px 0
   position: relative
   &__inner
-    width: 750px
+    max-width: 750px
     margin: 0 auto
+    img
+      width: 100%
   .slick-prev, .slick-next
     position: absolute
     top: 50%
@@ -24,3 +26,33 @@
       height: 50px
   .tns-item
     text-align: center
+
+@media(max-width: 991px)
+  .carousel
+    .slick-prev, .slick-next
+      top: 110%
+      left: 302px
+    .slick-next
+      right: 270px
+      left: auto
+
+@media(max-width: 767px)
+  .carousel
+    .slick-prev, .slick-next
+      top: 110%
+      left: 231px
+    .slick-next
+      right: 206px
+      left: auto
+
+@media(max-width: 575px)
+  .carousel
+    min-height: 490px
+    .slick-prev, .slick-next
+      top: 110%
+      left: 103px
+    .slick-next
+      right: 84px
+      left: auto
+
+

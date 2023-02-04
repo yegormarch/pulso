@@ -8,7 +8,7 @@
     text-transform: uppercase
     text-align: center
   &__tabs
-    width: 643px
+    max-width: 643px
     display: flex
     margin: 42px auto 0 auto
     justify-content: space-between
@@ -46,6 +46,34 @@
     display: none
     &_active
       display: flex
+
+@media(max-width: 991px)
+  .catalog
+    &__content
+      &_active
+        display: flex
+        justify-content: center
+
+@media(max-width: 767px)
+  .catalog
+    &__tab
+      width: 175px
+      font-size: 15px
+
+@media(max-width: 575px)
+  .catalog
+    padding-top: 20px
+    &__tabs
+      flex-direction: column
+      align-items: center
+      margin-top: 30px
+    &__tab
+      margin-top: 20px
+    &__content
+      margin-top: 48px
+
+
+
     
 
 
