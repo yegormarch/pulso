@@ -128,7 +128,7 @@ $('[data-modal=order]').each(function(i) {
       }).done(function() {
           $(this).find("input").val("");
           $('#consultation, #order').fadeOut();
-          $('.overlay, #thanks').fadeIn();
+          $('.overlay, #thanks').fadeIn('slow');
 
           $('form').trigger('reset');
       });
