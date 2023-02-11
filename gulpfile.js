@@ -24,7 +24,7 @@ gulp.task('styles', function() {
         .pipe(rename({suffix: '.min', prefix: ''}))
         .pipe(autoprefixer())
         .pipe(cleanCSS({compatibility: 'ie8'}))
-        .pipe(gulp.dest("src/css"))
+        .pipe(gulp.dest("dist/css"))
         .pipe(browserSync.stream());
 });
 
@@ -39,8 +39,8 @@ gulp.task('html', function() {
         .pipe(gulp.dest("dist/"));
 });
 
-gulp.task('images', function() {
-    return gulp.src('src/*img')
+gulp.task('images', function () {
+    return gulp.src("src/img/**/*")
         .pipe(imagemin())
         .pipe(gulp.dest("dist/img"));
 });
